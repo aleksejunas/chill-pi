@@ -19,3 +19,18 @@
 2025/04/03 18:26:30 [2025-04-03 18:26:30] [INFO] Starting chill-pi API on http://localhost:8080
 2025/04/03 18:26:36 [2025-04-03 18:26:36] [INFO] GET /notes/
 2025/04/03 18:26:41 [2025-04-03 18:26:41] [INFO] GET /notes/
+2025/04/03 21:29:53 [2025-04-03 21:29:53] [INFO] Starter server på http://localhost:8080
+2025/04/03 21:29:53 [2025-04-03 21:29:53] [INFO] Starting chill-pi API on http://localhost:8080
+[32m[2025-04-03 21:29:53] [INFO] Starter server på http://localhost:8080
+[0m[32m[2025-04-03 21:29:53] [INFO] Starting chill-pi API on http://localhost:8080
+[0m2025/04/03 21:32:00 [2025-04-03 21:32:00] [INFO] GET /notes/
+[32m[2025-04-03 21:32:00] [INFO] GET /notes/
+[0m2025/04/03 21:32:04 [2025-04-03 21:32:04] [INFO] GET /notes/
+[32m[2025-04-03 21:32:04] [INFO] GET /notes/
+[0m2025/04/03 21:33:16 [2025-04-03 21:33:16] [INFO] Starting chill-pi API on http://localhost:8080
+2025/04/03 21:51:41 [2025-04-03 21:51:41] [INFO] Starting chill-pi API on http://localhost:8080
+2025/04/03 21:51:41 [2025-04-03 21:51:41] [INFO] Starting chill-pi API on http://localhost:8080
+2025/04/03 21:51:41 [2025-04-03 21:51:41] [ERROR] Server Error: listen tcp :8080: bind: address already in use
+2025/04/03 21:52:11 [2025-04-03 21:52:11] [INFO] Starting chill-pi API on http://localhost:8080
+2025/04/03 21:52:11 [2025-04-03 21:52:11] [ERROR] Server Error: listen tcp :8080: bind: address already in use
+2025/04/03 21:52:29 [2025-04-03 21:52:29] [INFO] Starting chill-pi API on http://localhost:8080
