@@ -54,6 +54,9 @@ go-notes-api/
 ├── logs/ # For loggfiler (som du har i tmuxinator)
 │ └── (server.log, db.log osv.)
 │
+├── tools/ # Verktøy og scripts
+│ └── scanempty/main.go
+│
 └── test/ # Tester (kan være delt opp videre etter behov)
 └── note_test.go
 ```
