@@ -34,3 +34,28 @@
 2025/04/03 21:52:11 [2025-04-03 21:52:11] [INFO] Starting chill-pi API on http://localhost:8080
 2025/04/03 21:52:11 [2025-04-03 21:52:11] [ERROR] Server Error: listen tcp :8080: bind: address already in use
 2025/04/03 21:52:29 [2025-04-03 21:52:29] [INFO] Starting chill-pi API on http://localhost:8080
+2025/04/03 22:25:24 [2025-04-03 22:25:24] [INFO] GET /notes/
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+2025/04/03 23:07:09 [2025-04-03 23:07:09] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[GIN-debug] GET    /                         --> chill-pi/routes.RegisterRoutes.func1 (3 handlers)
+[GIN-debug] GET    /notes/                   --> chill-pi/handlers.GetNotes (3 handlers)
+[GIN-debug] GET    /notes/:id                --> chill-pi/handlers.GetNoteById (3 handlers)
+[32m[2025-04-03 23:07:09] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+2025/04/03 23:07:29 [2025-04-03 23:07:29] [INFO] GET /notes/1
+[32m[2025-04-03 23:07:29] [INFO] GET /notes/1
+[0m[GIN] 2025/04/03 - 23:07:29 | 200 |     167.708µs |       127.0.0.1 | GET      "/notes/1"
+2025/04/03 23:07:36 [2025-04-03 23:07:36] [INFO] GET /notes/2
+[32m[2025-04-03 23:07:36] [INFO] GET /notes/2
+[0m[GIN] 2025/04/03 - 23:07:36 | 200 |     122.905µs |       127.0.0.1 | GET      "/notes/2"
+[GIN] 2025/04/03 - 23:07:40 | 200 |       9.824µs |       127.0.0.1 | GET      "/notes/3"
+2025/04/03 23:07:45 [2025-04-03 23:07:45] [INFO] GET /notes
+[32m[2025-04-03 23:07:45] [INFO] GET /notes
+[0m[GIN] 2025/04/03 - 23:07:45 | 200 |     185.674µs |       127.0.0.1 | GET      "/notes/"

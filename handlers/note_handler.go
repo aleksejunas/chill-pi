@@ -15,26 +15,63 @@
 //
 // This is a simple implementation for serving a list of notes via an HTTP API.
 
+// package handlers
+//
+// import (
+//
+//	"encoding/json"
+//	"net/http"
+//
+//	"chill-pi/models"
+//	"chill-pi/utils"
+//
+// )
+//
+// // Hardcoded slice of notes (fake database)
+//
+//	var notes = []models.Note{
+//		{ID: 1, Title: "First Note", Content: "Greetings, Planet"},
+//		{ID: 2, Title: "Second Note", Content: "Greetings, Universe"},
+//	}
+//
+// // GET /notes
+//
+//	func GetNotes(w http.ResponseWriter, r *http.Request) {
+//		utils.Info("GET /notes/")
+//
+//		w.Header().Set("Content-Type", "application/json")
+//		json.NewEncoder(w).Encode(notes)
+//	}
 package handlers
 
 import (
-	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"chill-pi/models"
 	"chill-pi/utils"
+
+	"github.com/gin-gonic/gin"
 )
 
-// Hardcoded slice of notes (fake database)
 var notes = []models.Note{
 	{ID: 1, Title: "First Note", Content: "Greetings, Planet"},
 	{ID: 2, Title: "Second Note", Content: "Greetings, Universe"},
 }
 
-// GET /notes
-func GetNotes(w http.ResponseWriter, r *http.Request) {
-	utils.Info("GET /notes/")
+func GetNotes(c *gin.Context) {
+	utils.Info("GET /notes")
+	c.JSON(http.StatusOK, notes)
+}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(notes)
+func GetNoteById(c *gin.Context) {
+	idParam := c.Param("id")
+
+	for _, note := range notes {
+		if fmt.Sprintf("%d", note.ID) == idParam {
+			utils.Info("GET /notes/" + idParam)
+			c.JSON(http.StatusOK, note)
+			return
+		}
+	}
 }

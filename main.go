@@ -1,22 +1,26 @@
 package main
 
 import (
-	"net/http"
-
 	"chill-pi/routes"
 	"chill-pi/utils"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	utils.InitLogger("logs/server.log")
 	defer utils.CloseLogger()
 
-	utils.Info("Starting chill-pi API on http://localhost:8080")
+	r := gin.Default()
 
-	routes.RegisterRoutes()
+	routes.RegisterRoutes(r)
 
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		utils.Error("Server Error: " + err.Error())
-	}
+	utils.Info("Starter ChillPi med Gin på http://localhost:8080")
+	r.Run(":8080")
 }
+
+// err := http.ListenAndServe(":8080", nil)
+// if err != nil {
+// 	utils.Error("Server Error: " + err.Error())
+// }
+// }
