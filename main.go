@@ -1,9 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
+	// "chill-pi/handlers"
+	"chill-pi/routes"
 	"chill-pi/utils"
 )
 
@@ -13,12 +14,20 @@ func main() {
 
 	utils.Info("Starter server på http://localhost:8080")
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Serveren kjører 👋"))
-	})
+	utils.Info("Starting chill-pi API on http://localhost:8080")
+
+	routes.RegisterRoutes()
+
+	// http.HandleFunc("/notes/", func(w http.ResponseWriter, r *http.Request) {
+	// 	if r.Method == http.MethodGet {
+	// 		handlers.GetNotes(w, r)
+	// 	} else {
+	// 		http.Error(w, "Metode ikke støttet", http.StatusMethodNotAllowed)
+	// 	}
+	// })
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		log.Fatalf("Could not start the server: %v", err)
+		utils.Error("Server Error: " + err.Error())
 	}
 }
