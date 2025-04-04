@@ -1,5 +1,5 @@
 # Welcome to the CHILL-PI | a REST API written in GO
-**And Yes! it's a wordplay on REST with a silent A** :)
+**And Yes! it's a wordplay on REST with a silent A** 🤯
 
 ## How things are connected
 
