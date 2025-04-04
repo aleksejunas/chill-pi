@@ -1,6 +1,7 @@
 package main
 
 import (
+	"chill-pi/database"
 	"chill-pi/routes"
 	"chill-pi/utils"
 
@@ -10,6 +11,8 @@ import (
 func main() {
 	utils.InitLogger("logs/server.log")
 	defer utils.CloseLogger()
+
+	database.ConnectDB()
 
 	r := gin.Default()
 

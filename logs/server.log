@@ -59,3 +59,57 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 2025/04/03 23:07:45 [2025-04-03 23:07:45] [INFO] GET /notes
 [32m[2025-04-03 23:07:45] [INFO] GET /notes
 [0m[GIN] 2025/04/03 - 23:07:45 | 200 |     185.674µs |       127.0.0.1 | GET      "/notes/"
+# chill-pi/routes
+routes/routes.go:49:31: undefined: handlers.GetNotes
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> chill-pi/routes.RegisterRoutes.func1 (3 handlers)
+[GIN-debug] GET    /notes/                   --> chill-pi/handlers.GetNotes (3 handlers)
+2025/04/04 11:20:55 [2025-04-04 11:20:55] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[GIN-debug] GET    /notes/:id                --> chill-pi/handlers.GetNoteById (3 handlers)
+[32m[2025-04-04 11:20:55] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/04/04 - 12:25:56 | 404 |        1.23µs |             ::1 | POST     "/notes/"
+[GIN] 2025/04/04 - 12:28:20 | 404 |       1.146µs |             ::1 | POST     "/notes/"
+[GIN] 2025/04/04 - 12:29:39 | 200 |    9.327602ms |             ::1 | GET      "/notes/"
+[GIN] 2025/04/04 - 12:29:52 | 404 |        1.75µs |             ::1 | POST     "/notes/"
+[GIN] 2025/04/04 - 12:31:03 | 404 |       2.284µs |             ::1 | POST     "/notes/"
+[GIN] 2025/04/04 - 12:31:16 | 404 |       1.736µs |             ::1 | POST     "/notes"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> chill-pi/routes.RegisterRoutes.func1 (3 handlers)
+2025/04/04 12:31:40 [2025-04-04 12:31:40] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[GIN-debug] GET    /notes/                   --> chill-pi/handlers.GetNotes (3 handlers)
+[GIN-debug] GET    /notes/:id                --> chill-pi/handlers.GetNoteById (3 handlers)
+[GIN-debug] POST   /notes                    --> chill-pi/handlers.CreateNote (3 handlers)
+[GIN-debug] POST   /notes/                   --> chill-pi/handlers.CreateNote (3 handlers)
+[32m[2025-04-04 12:31:40] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> chill-pi/routes.RegisterRoutes.func1 (3 handlers)
+[GIN-debug] GET    /notes/                   --> chill-pi/handlers.GetNotes (3 handlers)
+[GIN-debug] GET    /notes/:id                --> chill-pi/handlers.GetNoteById (3 handlers)
+[GIN-debug] POST   /notes                    --> chill-pi/handlers.CreateNote (3 handlers)
+[GIN-debug] POST   /notes/                   --> chill-pi/handlers.CreateNote (3 handlers)
+2025/04/04 16:05:43 [2025-04-04 16:05:43] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[32m[2025-04-04 16:05:43] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080

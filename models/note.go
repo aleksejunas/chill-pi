@@ -13,7 +13,7 @@ og du binder det sammen i main.go
 package models
 
 type Note struct {
-	ID      int    `json:"id"`
+	ID      uint   `gorm:"primaryKey" json:"id"`
 	Title   string `json:"title"`
 	Content string `json:"content"`
 }

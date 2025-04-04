@@ -1,36 +1,21 @@
-// This file defines a Go package named `routes` that registers HTTP routes for a web server. Specifically:
-//
-// - It imports the `net/http` package for handling HTTP requests and responses, and a custom `handlers` package for processing specific routes.
-// - The `RegisterRoutes` function sets up an HTTP route `/notes` using `http.HandleFunc`.
-// - When a request is made to `/notes`:
-//   - If the HTTP method is `GET`, it calls the `handlers.GetNotes` function to handle the request.
-//   - For any other HTTP method, it responds with a `405 Method Not Allowed` error and a message "Metode ikke støttet" (Norwegian for "Method not supported").
-//
-// This file is likely part of a web application where `RegisterRoutes` is called to configure the server's routing logic.
+/*
+This file, `routes/routes.go`, defines the routing logic for a Gin-based web server in the `chill-pi` project. It registers HTTP endpoints and associates them with specific handler functions.
 
-// package routes
-//
-// import (
-// 	"net/http"
-//
-// 	"chill-pi/handlers"
-// )
-//
-// func RegisterRoutes() {
-// 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-// 		w.Header().Set("Content-Type", "application/json")
-// 		w.Write([]byte(`{"message":"Velkommen til chill-pi API 👋"}`))
-// 	})
-//
-// 	http.HandleFunc("/notes/", func(w http.ResponseWriter, r *http.Request) {
-// 		// Da matcher det både /notes og /notes/ og /notes/1 osv.
-// 		if r.Method == http.MethodGet {
-// 			handlers.GetNotes(w, r)
-// 		} else {
-// 			http.Error(w, "Metode ikke støttet", http.StatusMethodNotAllowed)
-// 		}
-// 	})
-// }
+### Key Details:
+1. **Package and Imports**:
+  - The file belongs to the `routes` package.
+  - It imports the `handlers` package for handling business logic and the `gin-gonic/gin` package for routing.
+
+2. **Functionality**:
+  - The `RegisterRoutes` function takes a `*gin.Engine` instance as input and sets up the following routes:
+  - **Root Route (`/`)**: Responds with a JSON message welcoming users to the API.
+  - **Notes Routes (`/notes`)**:
+  - `GET /notes`: Calls `handlers.GetNotes` to retrieve all notes.
+  - `GET /notes/:id`: Calls `handlers.GetNoteById` to retrieve a specific note by its ID.
+
+3. **Usage**:
+  - This function is intended to be called during server initialization to configure the API's routing structure.
+*/
 
 package routes
 
@@ -48,4 +33,7 @@ func RegisterRoutes(r *gin.Engine) {
 	noteRoutes := r.Group("/notes")
 	noteRoutes.GET("/", handlers.GetNotes)
 	noteRoutes.GET("/:id", handlers.GetNoteById)
+	// noteRoutes.POST("/", handlers.CreateNote)
+	RegisterLooseRoute(noteRoutes, "POST", "", handlers.CreateNote)
+	// RegisterLooseRoute(noteRoutes, "POST", "add", handlers.AddSpecialNote)
 }
