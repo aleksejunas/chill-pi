@@ -36,4 +36,5 @@ func RegisterRoutes(r *gin.Engine) {
 	// noteRoutes.POST("/", handlers.CreateNote)
 	RegisterLooseRoute(noteRoutes, "POST", "", handlers.CreateNote)
 	// RegisterLooseRoute(noteRoutes, "POST", "add", handlers.AddSpecialNote)
+	RegisterResourceRoutes(r, "/notes", handlers.NotesResource{})
 }
