@@ -4,13 +4,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// ResourceHandler defines all CRUD-methods as a handler that can implement
+// ResourceHandler defines all CRUD-methods that a resource must have
 type ResourceHandler interface {
 	GetAll(*gin.Context)
 	GetOne(*gin.Context)
 	Create(*gin.Context)
 	Update(*gin.Context)
 	Delete(*gin.Context)
+	Patch(*gin.Context) // Optional
 }
 
 // Registers standard CRUD-endpoints for a given resource (prefix)
@@ -24,6 +25,7 @@ func RegisterResourceRoutes(r *gin.Engine, basePath string, h ResourceHandler) {
 	// With ID
 	group.GET("/:id", h.GetOne)
 	group.PUT("/:id", h.Update)
+	group.PATCH("/:id", h.Patch)
 	group.DELETE("/:id", h.Delete)
 }
 
