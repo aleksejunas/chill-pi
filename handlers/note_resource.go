@@ -77,3 +77,7 @@ func (NotesResource) Delete(c *gin.Context) {
 	utils.Info("DELETE /notes/" + id)
 	c.JSON(http.StatusNotFound, gin.H{"message": "Note deleted"})
 }
+
+func (NotesResource) Patch(c *gin.Context) {
+	c.JSON(501, gin.H{"error": "PATCH ikke implementert"})
+}

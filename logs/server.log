@@ -113,3 +113,5 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
+# chill-pi/routes
+routes/routes.go:39:38: cannot use handlers.NotesResource{} (value of struct type handlers.NotesResource) as ResourceHandler value in argument to RegisterResourceRoutes: handlers.NotesResource does not implement ResourceHandler (missing method Patch)

@@ -30,11 +30,5 @@ func RegisterRoutes(r *gin.Engine) {
 		c.JSON(200, gin.H{"message": "Velkommen til chill-pi API 👋"})
 	})
 
-	noteRoutes := r.Group("/notes")
-	noteRoutes.GET("/", handlers.GetNotes)
-	noteRoutes.GET("/:id", handlers.GetNoteById)
-	// noteRoutes.POST("/", handlers.CreateNote)
-	RegisterLooseRoute(noteRoutes, "POST", "", handlers.CreateNote)
-	// RegisterLooseRoute(noteRoutes, "POST", "add", handlers.AddSpecialNote)
 	RegisterResourceRoutes(r, "/notes", handlers.NotesResource{})
 }
