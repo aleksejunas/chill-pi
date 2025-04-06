@@ -115,3 +115,35 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] Listening and serving HTTP on :8080
 # chill-pi/routes
 routes/routes.go:39:38: cannot use handlers.NotesResource{} (value of struct type handlers.NotesResource) as ResourceHandler value in argument to RegisterResourceRoutes: handlers.NotesResource does not implement ResourceHandler (missing method Patch)
+2025/04/06 13:50:40 [2025-04-06 13:50:40] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 13:51:58 [2025-04-06 13:51:58] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:33:47 [2025-04-06 18:33:47] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:35:33 [2025-04-06 18:35:33] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:40:07 [2025-04-06 18:40:07] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:40:58 [2025-04-06 18:40:58] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:41:46 [2025-04-06 18:41:46] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:42:21 [2025-04-06 18:42:21] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:44:01 [2025-04-06 18:44:01] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:44:22 [2025-04-06 18:44:22] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:58:58 [2025-04-06 18:58:58] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 18:59:05 [2025-04-06 18:59:05] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 19:14:16 [2025-04-06 19:14:16] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/06 19:17:09 [2025-04-06 19:17:09] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> chill-pi/routes.RegisterRoutes.func1 (3 handlers)
+[GIN-debug] GET    /notes/                   --> chill-pi/routes.ResourceHandler.GetAll-fm (3 handlers)
+[GIN-debug] POST   /notes/                   --> chill-pi/routes.ResourceHandler.Create-fm (3 handlers)
+[GIN-debug] GET    /notes/:id                --> chill-pi/routes.ResourceHandler.GetOne-fm (3 handlers)
+[GIN-debug] PUT    /notes/:id                --> chill-pi/routes.ResourceHandler.Update-fm (3 handlers)
+[GIN-debug] PATCH  /notes/:id                --> chill-pi/routes.ResourceHandler.Patch-fm (3 handlers)
+[GIN-debug] DELETE /notes/:id                --> chill-pi/routes.ResourceHandler.Delete-fm (3 handlers)
+[32m[2025-04-06 19:17:09] [INFO] Starter ChillPi med Gin på http://localhost:8080
+[0m[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+2025/04/06 19:22:55 [2025-04-06 19:22:55] [INFO] Starter ChillPi med Gin på http://localhost:8080
