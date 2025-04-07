@@ -1,5 +1,22 @@
 PROJECT_ROOT := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
+verify:
+	@echo "🔍 Verifiserer prosjektet..."
+	@echo "📦 Kjører go build..."
+	@go build -o /dev/null ./... || { echo '❌ Build feilet'; exit 1; }
+	@echo "🧠 Kjører go vet..."
+	@go vet ./... || { echo '❌ go vet fant problemer'; exit 1; }
+	@echo "🧹 Ser etter trivielt tomme Go-filer..."
+	@go run tools/scanempty/main.go || echo "⚠️  scanempty feilet (OK hvis du ikke har laget den ennå)"
+	@echo "✅ Verifisering ferdig"
+
+verify-templates:
+	@echo "📋 Sjekker at genererte templates kompilerer..."
+	@cd $(PROJECT_ROOT) && go test -v ./handlers
+
+verify-project: tidy verify lint verify-templates
+	@echo "✅ Project verified"
+
 run:
 	@echo "🚀 Kjører server..."
 	@cd $(PROJECT_ROOT) && go run main.go
@@ -41,12 +58,3 @@ scaffold-resource:
 	fi
 	@$(PROJECT_ROOT)/scripts/scaffold.sh $(name)
 
-verify:
-	@echo "🔍 Verifiserer prosjektet..."
-	@echo "📦 Kjører go build..."
-	@go build -o /dev/null ./... || { echo '❌ Build feilet'; exit 1; }
-	@echo "🧠 Kjører go vet..."
-	@go vet ./... || { echo '❌ go vet fant problemer'; exit 1; }
-	@echo "🧹 Ser etter trivielt tomme Go-filer..."
-	@go run tools/scanempty/main.go || echo "⚠️  scanempty feilet (OK hvis du ikke har laget den ennå)"
-	@echo "✅ Verifisering ferdig"

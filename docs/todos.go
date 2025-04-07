@@ -18,3 +18,9 @@ func todos() {}
 // TODO: [] 3. Teste med curl
 
 // TODO lage CLI-verktøy for å se/redigere db.sqlite?
+
+// TODO: [] Legg til en test_template.tmpl og generer en handlers/{{resourceName}}_test.go
+
+// TODO: [] Lag scripts/scaffold.sh --with-tests task (valgfri flagg)
+
+// TODO: [] Lag scripts/setup.sh som setter opp prosjektmappa med templates og .env eksempel

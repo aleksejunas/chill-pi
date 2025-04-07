@@ -147,3 +147,4 @@ routes/routes.go:39:38: cannot use handlers.NotesResource{} (value of struct typ
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
 2025/04/06 19:22:55 [2025-04-06 19:22:55] [INFO] Starter ChillPi med Gin på http://localhost:8080
+2025/04/07 23:07:12 [2025-04-07 23:07:12] [INFO] Starter ChillPi med Gin på http://localhost:8080

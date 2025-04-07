@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## This Script will generate
+# - A handler file in handlers/
+# - A model file in models/
+# - A test file in tests/
+
 # Check if resource name is provided
 if [ -z "$1" ]; then
 	echo "❌ Resource name required: ./scripts/scaffold.sh task"
@@ -31,6 +36,14 @@ if [ -f "$MODEL_FILE" ]; then
 else
 	echo "📦 Creating model: $MODEL_FILE"
 	sed "s/{{ResourceName}}/$RESOURCE_NAME/g; s/{{resourceName}}/$resource_name/g" templates/model.tmpl >"$MODEL_FILE"
+fi
+
+# Create test file if it doesn't exist
+if [ -f "$TEST_FILE" ]; then
+	echo "⚠️  $TEST_FILE already exists"
+else
+	echo "🧪 Generating test: $TEST_FILE"
+	sed "s/{{ResourceName}}/RESOURCE_NAME/g; s/{{resourceName}}/resource_name/g" "$TEST_TEMPLATE" >"TEST_FILE"
 fi
 
 echo "✅ Done. Remember to register route in routes/routes.go:"
